@@ -36,6 +36,7 @@ Partial Class amazonCalculator
         Me.addButton = New System.Windows.Forms.Button()
         Me.multiplyButton = New System.Windows.Forms.Button()
         Me.multiplyInput = New System.Windows.Forms.TextBox()
+        Me.alwaysOnTop = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'kekInput
@@ -47,40 +48,40 @@ Partial Class amazonCalculator
         '
         'calculateAmazon
         '
-        Me.calculateAmazon.Location = New System.Drawing.Point(12, 257)
+        Me.calculateAmazon.Location = New System.Drawing.Point(12, 261)
         Me.calculateAmazon.Name = "calculateAmazon"
         Me.calculateAmazon.Size = New System.Drawing.Size(260, 23)
-        Me.calculateAmazon.TabIndex = 4
+        Me.calculateAmazon.TabIndex = 6
         Me.calculateAmazon.Text = "Calculate"
         Me.calculateAmazon.UseVisualStyleBackColor = True
         '
         'amazonOutput
         '
-        Me.amazonOutput.Location = New System.Drawing.Point(12, 286)
+        Me.amazonOutput.Location = New System.Drawing.Point(12, 290)
         Me.amazonOutput.Name = "amazonOutput"
         Me.amazonOutput.Size = New System.Drawing.Size(260, 20)
-        Me.amazonOutput.TabIndex = 5
+        Me.amazonOutput.TabIndex = 7
         '
         'shippingInput
         '
         Me.shippingInput.Location = New System.Drawing.Point(12, 96)
         Me.shippingInput.Name = "shippingInput"
         Me.shippingInput.Size = New System.Drawing.Size(260, 20)
-        Me.shippingInput.TabIndex = 1
+        Me.shippingInput.TabIndex = 3
         '
         'feeInput
         '
         Me.feeInput.Location = New System.Drawing.Point(12, 151)
         Me.feeInput.Name = "feeInput"
         Me.feeInput.Size = New System.Drawing.Size(260, 20)
-        Me.feeInput.TabIndex = 2
+        Me.feeInput.TabIndex = 4
         '
         'taxInput
         '
         Me.taxInput.Location = New System.Drawing.Point(12, 206)
         Me.taxInput.Name = "taxInput"
         Me.taxInput.Size = New System.Drawing.Size(260, 20)
-        Me.taxInput.TabIndex = 3
+        Me.taxInput.TabIndex = 5
         '
         'Button1
         '
@@ -89,6 +90,7 @@ Partial Class amazonCalculator
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(260, 23)
         Me.Button1.TabIndex = 100
+        Me.Button1.TabStop = False
         Me.Button1.Text = "Net price"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -99,6 +101,7 @@ Partial Class amazonCalculator
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(260, 23)
         Me.Button2.TabIndex = 101
+        Me.Button2.TabStop = False
         Me.Button2.Text = "Shipping"
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -109,6 +112,7 @@ Partial Class amazonCalculator
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(260, 23)
         Me.Button3.TabIndex = 102
+        Me.Button3.TabStop = False
         Me.Button3.Text = "Amazon Fee"
         Me.Button3.UseVisualStyleBackColor = True
         '
@@ -118,34 +122,37 @@ Partial Class amazonCalculator
         Me.Button4.Location = New System.Drawing.Point(12, 177)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(260, 23)
-        Me.Button4.TabIndex = 103
+        Me.Button4.TabIndex = 100
+        Me.Button4.TabStop = False
         Me.Button4.Text = "Tax"
         Me.Button4.UseVisualStyleBackColor = True
         '
         'addInput
         '
-        Me.addInput.Location = New System.Drawing.Point(239, 43)
+        Me.addInput.Location = New System.Drawing.Point(239, 41)
         Me.addInput.Name = "addInput"
         Me.addInput.Size = New System.Drawing.Size(33, 20)
-        Me.addInput.TabIndex = 104
+        Me.addInput.TabIndex = 2
         '
         'addButton
         '
         Me.addButton.Enabled = False
-        Me.addButton.Location = New System.Drawing.Point(208, 42)
+        Me.addButton.Location = New System.Drawing.Point(208, 41)
         Me.addButton.Name = "addButton"
         Me.addButton.Size = New System.Drawing.Size(25, 20)
         Me.addButton.TabIndex = 105
+        Me.addButton.TabStop = False
         Me.addButton.Text = "+"
         Me.addButton.UseVisualStyleBackColor = True
         '
         'multiplyButton
         '
         Me.multiplyButton.Enabled = False
-        Me.multiplyButton.Location = New System.Drawing.Point(138, 42)
+        Me.multiplyButton.Location = New System.Drawing.Point(138, 41)
         Me.multiplyButton.Name = "multiplyButton"
         Me.multiplyButton.Size = New System.Drawing.Size(25, 20)
         Me.multiplyButton.TabIndex = 106
+        Me.multiplyButton.TabStop = False
         Me.multiplyButton.Text = "x"
         Me.multiplyButton.UseVisualStyleBackColor = True
         '
@@ -154,13 +161,25 @@ Partial Class amazonCalculator
         Me.multiplyInput.Location = New System.Drawing.Point(169, 41)
         Me.multiplyInput.Name = "multiplyInput"
         Me.multiplyInput.Size = New System.Drawing.Size(33, 20)
-        Me.multiplyInput.TabIndex = 107
+        Me.multiplyInput.TabIndex = 1
+        '
+        'alwaysOnTop
+        '
+        Me.alwaysOnTop.AutoSize = True
+        Me.alwaysOnTop.Location = New System.Drawing.Point(12, 238)
+        Me.alwaysOnTop.Name = "alwaysOnTop"
+        Me.alwaysOnTop.Size = New System.Drawing.Size(146, 17)
+        Me.alwaysOnTop.TabIndex = 107
+        Me.alwaysOnTop.TabStop = False
+        Me.alwaysOnTop.Text = "Application always on top"
+        Me.alwaysOnTop.UseVisualStyleBackColor = True
         '
         'amazonCalculator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(286, 322)
+        Me.Controls.Add(Me.alwaysOnTop)
         Me.Controls.Add(Me.multiplyInput)
         Me.Controls.Add(Me.multiplyButton)
         Me.Controls.Add(Me.addButton)
@@ -196,4 +215,5 @@ Partial Class amazonCalculator
     Friend WithEvents addButton As Button
     Friend WithEvents multiplyButton As Button
     Friend WithEvents multiplyInput As TextBox
+    Friend WithEvents alwaysOnTop As CheckBox
 End Class

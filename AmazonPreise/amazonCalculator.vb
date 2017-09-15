@@ -11,16 +11,12 @@
         calculateAmazon.DialogResult = System.Windows.Forms.DialogResult.OK
     End Sub
 
-    Private Sub kekInput_TextChanged(sender As Object, e As EventArgs) Handles kekInput.TextChanged
-
-    End Sub
-
-    Private Sub addInput_TextChanged(sender As Object, e As EventArgs) Handles addInput.TextChanged
-
-    End Sub
-
-    Private Sub multiplyInput_TextChanged(sender As Object, e As EventArgs) Handles multiplyInput.TextChanged
-
+    Private Sub alwaysOnTop_CheckedChanged(sender As Object, e As EventArgs) Handles alwaysOnTop.CheckedChanged
+        If (alwaysOnTop.Checked) Then
+            Me.TopMost = True
+        Else
+            Me.TopMost = False
+        End If
     End Sub
 
     Private Sub calculateAmazon_Click(sender As Object, e As EventArgs) Handles calculateAmazon.Click
