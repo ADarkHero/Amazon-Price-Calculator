@@ -32,13 +32,17 @@ Partial Class amazonCalculator
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.addInput = New System.Windows.Forms.TextBox()
+        Me.addButton = New System.Windows.Forms.Button()
+        Me.multiplyButton = New System.Windows.Forms.Button()
+        Me.multiplyInput = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'kekInput
         '
         Me.kekInput.Location = New System.Drawing.Point(12, 41)
         Me.kekInput.Name = "kekInput"
-        Me.kekInput.Size = New System.Drawing.Size(260, 20)
+        Me.kekInput.Size = New System.Drawing.Size(120, 20)
         Me.kekInput.TabIndex = 0
         '
         'calculateAmazon
@@ -118,11 +122,49 @@ Partial Class amazonCalculator
         Me.Button4.Text = "Tax"
         Me.Button4.UseVisualStyleBackColor = True
         '
+        'addInput
+        '
+        Me.addInput.Location = New System.Drawing.Point(239, 43)
+        Me.addInput.Name = "addInput"
+        Me.addInput.Size = New System.Drawing.Size(33, 20)
+        Me.addInput.TabIndex = 104
+        '
+        'addButton
+        '
+        Me.addButton.Enabled = False
+        Me.addButton.Location = New System.Drawing.Point(208, 42)
+        Me.addButton.Name = "addButton"
+        Me.addButton.Size = New System.Drawing.Size(25, 20)
+        Me.addButton.TabIndex = 105
+        Me.addButton.Text = "+"
+        Me.addButton.UseVisualStyleBackColor = True
+        '
+        'multiplyButton
+        '
+        Me.multiplyButton.Enabled = False
+        Me.multiplyButton.Location = New System.Drawing.Point(138, 42)
+        Me.multiplyButton.Name = "multiplyButton"
+        Me.multiplyButton.Size = New System.Drawing.Size(25, 20)
+        Me.multiplyButton.TabIndex = 106
+        Me.multiplyButton.Text = "x"
+        Me.multiplyButton.UseVisualStyleBackColor = True
+        '
+        'multiplyInput
+        '
+        Me.multiplyInput.Location = New System.Drawing.Point(169, 41)
+        Me.multiplyInput.Name = "multiplyInput"
+        Me.multiplyInput.Size = New System.Drawing.Size(33, 20)
+        Me.multiplyInput.TabIndex = 107
+        '
         'amazonCalculator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 319)
+        Me.ClientSize = New System.Drawing.Size(286, 322)
+        Me.Controls.Add(Me.multiplyInput)
+        Me.Controls.Add(Me.multiplyButton)
+        Me.Controls.Add(Me.addButton)
+        Me.Controls.Add(Me.addInput)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
@@ -150,4 +192,8 @@ Partial Class amazonCalculator
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
+    Friend WithEvents addInput As TextBox
+    Friend WithEvents addButton As Button
+    Friend WithEvents multiplyButton As Button
+    Friend WithEvents multiplyInput As TextBox
 End Class
