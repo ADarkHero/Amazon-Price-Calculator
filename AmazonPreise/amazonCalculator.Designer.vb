@@ -22,6 +22,7 @@ Partial Class amazonCalculator
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(amazonCalculator))
         Me.kekInput = New System.Windows.Forms.TextBox()
         Me.calculateAmazon = New System.Windows.Forms.Button()
         Me.amazonOutput = New System.Windows.Forms.TextBox()
@@ -69,6 +70,7 @@ Partial Class amazonCalculator
         '
         'calculateAmazon
         '
+        Me.calculateAmazon.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.calculateAmazon.Location = New System.Drawing.Point(12, 357)
         Me.calculateAmazon.Name = "calculateAmazon"
         Me.calculateAmazon.Size = New System.Drawing.Size(260, 23)
@@ -110,7 +112,6 @@ Partial Class amazonCalculator
         '
         'Button1
         '
-        Me.Button1.Enabled = False
         Me.Button1.Location = New System.Drawing.Point(12, 12)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(77, 75)
@@ -121,7 +122,6 @@ Partial Class amazonCalculator
         '
         'Button2
         '
-        Me.Button2.Enabled = False
         Me.Button2.Location = New System.Drawing.Point(12, 94)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(77, 49)
@@ -132,7 +132,6 @@ Partial Class amazonCalculator
         '
         'Button3
         '
-        Me.Button3.Enabled = False
         Me.Button3.Location = New System.Drawing.Point(12, 149)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(77, 49)
@@ -143,7 +142,6 @@ Partial Class amazonCalculator
         '
         'Button4
         '
-        Me.Button4.Enabled = False
         Me.Button4.Location = New System.Drawing.Point(12, 204)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(77, 49)
@@ -203,7 +201,6 @@ Partial Class amazonCalculator
         '
         'Button5
         '
-        Me.Button5.Enabled = False
         Me.Button5.Location = New System.Drawing.Point(12, 259)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(77, 48)
@@ -252,7 +249,6 @@ Partial Class amazonCalculator
         '
         'Button8
         '
-        Me.Button8.Enabled = False
         Me.Button8.Location = New System.Drawing.Point(12, 386)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(82, 20)
@@ -263,7 +259,6 @@ Partial Class amazonCalculator
         '
         'Button9
         '
-        Me.Button9.Enabled = False
         Me.Button9.Location = New System.Drawing.Point(12, 412)
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(82, 20)
@@ -429,6 +424,7 @@ Partial Class amazonCalculator
         Me.Controls.Add(Me.calculateAmazon)
         Me.Controls.Add(Me.kekInput)
         Me.Font = New System.Drawing.Font("Consolas", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "amazonCalculator"
         Me.Text = "Amazon Calculator"
         Me.ResumeLayout(False)
