@@ -29,22 +29,22 @@ Partial Class amazonCalculator
         Me.shippingInput = New System.Windows.Forms.TextBox()
         Me.feeInput = New System.Windows.Forms.TextBox()
         Me.taxInput = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.btnNetPrice = New System.Windows.Forms.Button()
+        Me.btnShipping = New System.Windows.Forms.Button()
+        Me.btnAmazonFee = New System.Windows.Forms.Button()
+        Me.btnTax = New System.Windows.Forms.Button()
         Me.addInput = New System.Windows.Forms.TextBox()
         Me.addButton = New System.Windows.Forms.Button()
         Me.multiplyButton = New System.Windows.Forms.Button()
         Me.multiplyInput = New System.Windows.Forms.TextBox()
         Me.alwaysOnTop = New System.Windows.Forms.CheckBox()
-        Me.Button5 = New System.Windows.Forms.Button()
+        Me.btnProfit = New System.Windows.Forms.Button()
         Me.profitMultiplyInput = New System.Windows.Forms.TextBox()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.profitAddInput = New System.Windows.Forms.TextBox()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
+        Me.btnMinimal = New System.Windows.Forms.Button()
+        Me.btnWithProfit = New System.Windows.Forms.Button()
         Me.amazonProfitOutput = New System.Windows.Forms.TextBox()
         Me.Button10 = New System.Windows.Forms.Button()
         Me.Button11 = New System.Windows.Forms.Button()
@@ -56,6 +56,22 @@ Partial Class amazonCalculator
         Me.Button17 = New System.Windows.Forms.Button()
         Me.Button18 = New System.Windows.Forms.Button()
         Me.Button19 = New System.Windows.Forms.Button()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
+        Me.RichTextBox3 = New System.Windows.Forms.RichTextBox()
+        Me.RichTextBox4 = New System.Windows.Forms.RichTextBox()
+        Me.RichTextBox5 = New System.Windows.Forms.RichTextBox()
+        Me.RichTextBox6 = New System.Windows.Forms.RichTextBox()
+        Me.RichTextBox7 = New System.Windows.Forms.RichTextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.amazonFeeOverview = New System.Windows.Forms.CheckBox()
+        Me.saveConfiguration = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'kekInput
@@ -71,7 +87,7 @@ Partial Class amazonCalculator
         'calculateAmazon
         '
         Me.calculateAmazon.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.calculateAmazon.Location = New System.Drawing.Point(12, 357)
+        Me.calculateAmazon.Location = New System.Drawing.Point(12, 408)
         Me.calculateAmazon.Name = "calculateAmazon"
         Me.calculateAmazon.Size = New System.Drawing.Size(260, 23)
         Me.calculateAmazon.TabIndex = 8
@@ -80,7 +96,7 @@ Partial Class amazonCalculator
         '
         'amazonOutput
         '
-        Me.amazonOutput.Location = New System.Drawing.Point(100, 386)
+        Me.amazonOutput.Location = New System.Drawing.Point(100, 437)
         Me.amazonOutput.Name = "amazonOutput"
         Me.amazonOutput.Size = New System.Drawing.Size(141, 20)
         Me.amazonOutput.TabIndex = 9
@@ -110,45 +126,45 @@ Partial Class amazonCalculator
         Me.taxInput.TabIndex = 5
         Me.taxInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'Button1
+        'btnNetPrice
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 12)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(77, 75)
-        Me.Button1.TabIndex = 100
-        Me.Button1.TabStop = False
-        Me.Button1.Text = "Net price"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnNetPrice.Location = New System.Drawing.Point(12, 12)
+        Me.btnNetPrice.Name = "btnNetPrice"
+        Me.btnNetPrice.Size = New System.Drawing.Size(77, 75)
+        Me.btnNetPrice.TabIndex = 100
+        Me.btnNetPrice.TabStop = False
+        Me.btnNetPrice.Text = "Net price"
+        Me.btnNetPrice.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnShipping
         '
-        Me.Button2.Location = New System.Drawing.Point(12, 94)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(77, 49)
-        Me.Button2.TabIndex = 101
-        Me.Button2.TabStop = False
-        Me.Button2.Text = "Shipping"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnShipping.Location = New System.Drawing.Point(12, 94)
+        Me.btnShipping.Name = "btnShipping"
+        Me.btnShipping.Size = New System.Drawing.Size(77, 49)
+        Me.btnShipping.TabIndex = 101
+        Me.btnShipping.TabStop = False
+        Me.btnShipping.Text = "Shipping"
+        Me.btnShipping.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btnAmazonFee
         '
-        Me.Button3.Location = New System.Drawing.Point(12, 149)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(77, 49)
-        Me.Button3.TabIndex = 102
-        Me.Button3.TabStop = False
-        Me.Button3.Text = "Amazon Fee"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnAmazonFee.Location = New System.Drawing.Point(12, 149)
+        Me.btnAmazonFee.Name = "btnAmazonFee"
+        Me.btnAmazonFee.Size = New System.Drawing.Size(77, 49)
+        Me.btnAmazonFee.TabIndex = 102
+        Me.btnAmazonFee.TabStop = False
+        Me.btnAmazonFee.Text = "Amazon Fee"
+        Me.btnAmazonFee.UseVisualStyleBackColor = True
         '
-        'Button4
+        'btnTax
         '
-        Me.Button4.Location = New System.Drawing.Point(12, 204)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(77, 49)
-        Me.Button4.TabIndex = 100
-        Me.Button4.TabStop = False
-        Me.Button4.Text = "Tax"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.btnTax.Location = New System.Drawing.Point(12, 204)
+        Me.btnTax.Name = "btnTax"
+        Me.btnTax.Size = New System.Drawing.Size(77, 49)
+        Me.btnTax.TabIndex = 100
+        Me.btnTax.TabStop = False
+        Me.btnTax.Text = "Tax"
+        Me.btnTax.UseVisualStyleBackColor = True
         '
         'addInput
         '
@@ -191,7 +207,7 @@ Partial Class amazonCalculator
         'alwaysOnTop
         '
         Me.alwaysOnTop.AutoSize = True
-        Me.alwaysOnTop.Location = New System.Drawing.Point(12, 334)
+        Me.alwaysOnTop.Location = New System.Drawing.Point(12, 385)
         Me.alwaysOnTop.Name = "alwaysOnTop"
         Me.alwaysOnTop.Size = New System.Drawing.Size(176, 17)
         Me.alwaysOnTop.TabIndex = 107
@@ -199,15 +215,15 @@ Partial Class amazonCalculator
         Me.alwaysOnTop.Text = "Application always on top"
         Me.alwaysOnTop.UseVisualStyleBackColor = True
         '
-        'Button5
+        'btnProfit
         '
-        Me.Button5.Location = New System.Drawing.Point(12, 259)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(77, 48)
-        Me.Button5.TabIndex = 108
-        Me.Button5.TabStop = False
-        Me.Button5.Text = "Profit"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.btnProfit.Location = New System.Drawing.Point(12, 259)
+        Me.btnProfit.Name = "btnProfit"
+        Me.btnProfit.Size = New System.Drawing.Size(77, 48)
+        Me.btnProfit.TabIndex = 108
+        Me.btnProfit.TabStop = False
+        Me.btnProfit.Text = "Profit"
+        Me.btnProfit.UseVisualStyleBackColor = True
         '
         'profitMultiplyInput
         '
@@ -247,29 +263,29 @@ Partial Class amazonCalculator
         Me.profitAddInput.TabIndex = 7
         Me.profitAddInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'Button8
+        'btnMinimal
         '
-        Me.Button8.Location = New System.Drawing.Point(12, 386)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(82, 20)
-        Me.Button8.TabIndex = 113
-        Me.Button8.TabStop = False
-        Me.Button8.Text = "Minimal Price"
-        Me.Button8.UseVisualStyleBackColor = True
+        Me.btnMinimal.Location = New System.Drawing.Point(12, 437)
+        Me.btnMinimal.Name = "btnMinimal"
+        Me.btnMinimal.Size = New System.Drawing.Size(82, 20)
+        Me.btnMinimal.TabIndex = 113
+        Me.btnMinimal.TabStop = False
+        Me.btnMinimal.Text = "Minimal Price"
+        Me.btnMinimal.UseVisualStyleBackColor = True
         '
-        'Button9
+        'btnWithProfit
         '
-        Me.Button9.Location = New System.Drawing.Point(12, 412)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(82, 20)
-        Me.Button9.TabIndex = 114
-        Me.Button9.TabStop = False
-        Me.Button9.Text = "With Profit"
-        Me.Button9.UseVisualStyleBackColor = True
+        Me.btnWithProfit.Location = New System.Drawing.Point(12, 463)
+        Me.btnWithProfit.Name = "btnWithProfit"
+        Me.btnWithProfit.Size = New System.Drawing.Size(82, 20)
+        Me.btnWithProfit.TabIndex = 114
+        Me.btnWithProfit.TabStop = False
+        Me.btnWithProfit.Text = "With Profit"
+        Me.btnWithProfit.UseVisualStyleBackColor = True
         '
         'amazonProfitOutput
         '
-        Me.amazonProfitOutput.Location = New System.Drawing.Point(100, 412)
+        Me.amazonProfitOutput.Location = New System.Drawing.Point(100, 463)
         Me.amazonProfitOutput.Name = "amazonProfitOutput"
         Me.amazonProfitOutput.Size = New System.Drawing.Size(141, 20)
         Me.amazonProfitOutput.TabIndex = 10
@@ -344,7 +360,7 @@ Partial Class amazonCalculator
         'Button16
         '
         Me.Button16.Enabled = False
-        Me.Button16.Location = New System.Drawing.Point(247, 386)
+        Me.Button16.Location = New System.Drawing.Point(247, 437)
         Me.Button16.Name = "Button16"
         Me.Button16.Size = New System.Drawing.Size(25, 20)
         Me.Button16.TabIndex = 121
@@ -355,7 +371,7 @@ Partial Class amazonCalculator
         'Button17
         '
         Me.Button17.Enabled = False
-        Me.Button17.Location = New System.Drawing.Point(247, 412)
+        Me.Button17.Location = New System.Drawing.Point(247, 463)
         Me.Button17.Name = "Button17"
         Me.Button17.Size = New System.Drawing.Size(25, 20)
         Me.Button17.TabIndex = 122
@@ -385,11 +401,199 @@ Partial Class amazonCalculator
         Me.Button19.Text = "*"
         Me.Button19.UseVisualStyleBackColor = True
         '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.Location = New System.Drawing.Point(311, 134)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.ReadOnly = True
+        Me.RichTextBox1.Size = New System.Drawing.Size(286, 150)
+        Me.RichTextBox1.TabIndex = 125
+        Me.RichTextBox1.TabStop = False
+        Me.RichTextBox1.Text = resources.GetString("RichTextBox1.Text")
+        '
+        'RichTextBox2
+        '
+        Me.RichTextBox2.Location = New System.Drawing.Point(311, 11)
+        Me.RichTextBox2.Name = "RichTextBox2"
+        Me.RichTextBox2.ReadOnly = True
+        Me.RichTextBox2.Size = New System.Drawing.Size(286, 50)
+        Me.RichTextBox2.TabIndex = 126
+        Me.RichTextBox2.TabStop = False
+        Me.RichTextBox2.Text = "Computers" & Global.Microsoft.VisualBasic.ChrW(10) & "Large Appliances (with the exception of Accessories, Microwaves, and Ra" &
+    "nge Hoods)"
+        '
+        'RichTextBox3
+        '
+        Me.RichTextBox3.Location = New System.Drawing.Point(311, 93)
+        Me.RichTextBox3.Name = "RichTextBox3"
+        Me.RichTextBox3.ReadOnly = True
+        Me.RichTextBox3.Size = New System.Drawing.Size(286, 35)
+        Me.RichTextBox3.TabIndex = 127
+        Me.RichTextBox3.TabStop = False
+        Me.RichTextBox3.Text = "Tyres" & Global.Microsoft.VisualBasic.ChrW(10) & "Beer, Wine & Spirits"
+        '
+        'RichTextBox4
+        '
+        Me.RichTextBox4.Location = New System.Drawing.Point(311, 67)
+        Me.RichTextBox4.Name = "RichTextBox4"
+        Me.RichTextBox4.ReadOnly = True
+        Me.RichTextBox4.Size = New System.Drawing.Size(286, 20)
+        Me.RichTextBox4.TabIndex = 128
+        Me.RichTextBox4.TabStop = False
+        Me.RichTextBox4.Text = "Video Game Consoles"
+        '
+        'RichTextBox5
+        '
+        Me.RichTextBox5.Location = New System.Drawing.Point(311, 290)
+        Me.RichTextBox5.Name = "RichTextBox5"
+        Me.RichTextBox5.ReadOnly = True
+        Me.RichTextBox5.Size = New System.Drawing.Size(286, 140)
+        Me.RichTextBox5.TabIndex = 129
+        Me.RichTextBox5.TabStop = False
+        Me.RichTextBox5.Text = "Books, Music, VHS, DVD" & Global.Microsoft.VisualBasic.ChrW(10) & "Business, Industrial & Scientific Supplies" & Global.Microsoft.VisualBasic.ChrW(10) & "Car & Motorbike" &
+    "" & Global.Microsoft.VisualBasic.ChrW(10) & "Education Supplies" & Global.Microsoft.VisualBasic.ChrW(10) & "Food Service" & Global.Microsoft.VisualBasic.ChrW(10) & "Grocery" & Global.Microsoft.VisualBasic.ChrW(10) & "Software" & Global.Microsoft.VisualBasic.ChrW(10) & "Video Games" & Global.Microsoft.VisualBasic.ChrW(10) & "Watches" & Global.Microsoft.VisualBasic.ChrW(10) & "Everything" &
+    " Else"
+        '
+        'RichTextBox6
+        '
+        Me.RichTextBox6.Location = New System.Drawing.Point(311, 436)
+        Me.RichTextBox6.Name = "RichTextBox6"
+        Me.RichTextBox6.ReadOnly = True
+        Me.RichTextBox6.Size = New System.Drawing.Size(286, 20)
+        Me.RichTextBox6.TabIndex = 130
+        Me.RichTextBox6.TabStop = False
+        Me.RichTextBox6.Text = "Jewellery"
+        '
+        'RichTextBox7
+        '
+        Me.RichTextBox7.Location = New System.Drawing.Point(311, 462)
+        Me.RichTextBox7.Name = "RichTextBox7"
+        Me.RichTextBox7.ReadOnly = True
+        Me.RichTextBox7.Size = New System.Drawing.Size(286, 20)
+        Me.RichTextBox7.TabIndex = 131
+        Me.RichTextBox7.TabStop = False
+        Me.RichTextBox7.Text = "Amazon Device Accessories"
+        '
+        'Button1
+        '
+        Me.Button1.Enabled = False
+        Me.Button1.Location = New System.Drawing.Point(562, 11)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(35, 20)
+        Me.Button1.TabIndex = 132
+        Me.Button1.TabStop = False
+        Me.Button1.Text = "7%"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Enabled = False
+        Me.Button2.Location = New System.Drawing.Point(562, 67)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(35, 20)
+        Me.Button2.TabIndex = 133
+        Me.Button2.TabStop = False
+        Me.Button2.Text = "8%"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Enabled = False
+        Me.Button3.Location = New System.Drawing.Point(562, 93)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(35, 20)
+        Me.Button3.TabIndex = 134
+        Me.Button3.TabStop = False
+        Me.Button3.Text = "10%"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Enabled = False
+        Me.Button4.Location = New System.Drawing.Point(562, 134)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(35, 20)
+        Me.Button4.TabIndex = 135
+        Me.Button4.TabStop = False
+        Me.Button4.Text = "12%"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Enabled = False
+        Me.Button5.Location = New System.Drawing.Point(562, 290)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(35, 20)
+        Me.Button5.TabIndex = 136
+        Me.Button5.TabStop = False
+        Me.Button5.Text = "15%"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button8
+        '
+        Me.Button8.Enabled = False
+        Me.Button8.Location = New System.Drawing.Point(562, 436)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(35, 20)
+        Me.Button8.TabIndex = 137
+        Me.Button8.TabStop = False
+        Me.Button8.Text = "20%"
+        Me.Button8.UseVisualStyleBackColor = True
+        '
+        'Button9
+        '
+        Me.Button9.Enabled = False
+        Me.Button9.Location = New System.Drawing.Point(562, 462)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(35, 20)
+        Me.Button9.TabIndex = 138
+        Me.Button9.TabStop = False
+        Me.Button9.Text = "45%"
+        Me.Button9.UseVisualStyleBackColor = True
+        '
+        'amazonFeeOverview
+        '
+        Me.amazonFeeOverview.AutoSize = True
+        Me.amazonFeeOverview.Location = New System.Drawing.Point(12, 362)
+        Me.amazonFeeOverview.Name = "amazonFeeOverview"
+        Me.amazonFeeOverview.Size = New System.Drawing.Size(170, 17)
+        Me.amazonFeeOverview.TabIndex = 139
+        Me.amazonFeeOverview.TabStop = False
+        Me.amazonFeeOverview.Text = "Show Amazon fee overview"
+        Me.amazonFeeOverview.UseVisualStyleBackColor = True
+        '
+        'saveConfiguration
+        '
+        Me.saveConfiguration.AutoSize = True
+        Me.saveConfiguration.Location = New System.Drawing.Point(12, 339)
+        Me.saveConfiguration.Name = "saveConfiguration"
+        Me.saveConfiguration.Size = New System.Drawing.Size(134, 17)
+        Me.saveConfiguration.TabIndex = 140
+        Me.saveConfiguration.TabStop = False
+        Me.saveConfiguration.Text = "Save configuration"
+        Me.saveConfiguration.UseVisualStyleBackColor = True
+        '
         'amazonCalculator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(285, 448)
+        Me.ClientSize = New System.Drawing.Size(609, 491)
+        Me.Controls.Add(Me.saveConfiguration)
+        Me.Controls.Add(Me.amazonFeeOverview)
+        Me.Controls.Add(Me.Button9)
+        Me.Controls.Add(Me.Button8)
+        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.RichTextBox7)
+        Me.Controls.Add(Me.RichTextBox6)
+        Me.Controls.Add(Me.RichTextBox5)
+        Me.Controls.Add(Me.RichTextBox4)
+        Me.Controls.Add(Me.RichTextBox3)
+        Me.Controls.Add(Me.RichTextBox2)
+        Me.Controls.Add(Me.RichTextBox1)
         Me.Controls.Add(Me.Button19)
         Me.Controls.Add(Me.Button18)
         Me.Controls.Add(Me.Button17)
@@ -401,22 +605,22 @@ Partial Class amazonCalculator
         Me.Controls.Add(Me.Button11)
         Me.Controls.Add(Me.Button10)
         Me.Controls.Add(Me.amazonProfitOutput)
-        Me.Controls.Add(Me.Button9)
-        Me.Controls.Add(Me.Button8)
+        Me.Controls.Add(Me.btnWithProfit)
+        Me.Controls.Add(Me.btnMinimal)
         Me.Controls.Add(Me.profitAddInput)
         Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.profitMultiplyInput)
-        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.btnProfit)
         Me.Controls.Add(Me.alwaysOnTop)
         Me.Controls.Add(Me.multiplyInput)
         Me.Controls.Add(Me.multiplyButton)
         Me.Controls.Add(Me.addButton)
         Me.Controls.Add(Me.addInput)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnTax)
+        Me.Controls.Add(Me.btnAmazonFee)
+        Me.Controls.Add(Me.btnShipping)
+        Me.Controls.Add(Me.btnNetPrice)
         Me.Controls.Add(Me.taxInput)
         Me.Controls.Add(Me.feeInput)
         Me.Controls.Add(Me.shippingInput)
@@ -438,22 +642,22 @@ Partial Class amazonCalculator
     Friend WithEvents shippingInput As TextBox
     Friend WithEvents feeInput As TextBox
     Friend WithEvents taxInput As TextBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
+    Friend WithEvents btnNetPrice As Button
+    Friend WithEvents btnShipping As Button
+    Friend WithEvents btnAmazonFee As Button
+    Friend WithEvents btnTax As Button
     Friend WithEvents addInput As TextBox
     Friend WithEvents addButton As Button
     Friend WithEvents multiplyButton As Button
     Friend WithEvents multiplyInput As TextBox
     Friend WithEvents alwaysOnTop As CheckBox
-    Friend WithEvents Button5 As Button
+    Friend WithEvents btnProfit As Button
     Friend WithEvents profitMultiplyInput As TextBox
     Friend WithEvents Button6 As Button
     Friend WithEvents Button7 As Button
     Friend WithEvents profitAddInput As TextBox
-    Friend WithEvents Button8 As Button
-    Friend WithEvents Button9 As Button
+    Friend WithEvents btnMinimal As Button
+    Friend WithEvents btnWithProfit As Button
     Friend WithEvents amazonProfitOutput As TextBox
     Friend WithEvents Button10 As Button
     Friend WithEvents Button11 As Button
@@ -465,4 +669,20 @@ Partial Class amazonCalculator
     Friend WithEvents Button17 As Button
     Friend WithEvents Button18 As Button
     Friend WithEvents Button19 As Button
+    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents RichTextBox2 As RichTextBox
+    Friend WithEvents RichTextBox3 As RichTextBox
+    Friend WithEvents RichTextBox4 As RichTextBox
+    Friend WithEvents RichTextBox5 As RichTextBox
+    Friend WithEvents RichTextBox6 As RichTextBox
+    Friend WithEvents RichTextBox7 As RichTextBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button8 As Button
+    Friend WithEvents Button9 As Button
+    Friend WithEvents amazonFeeOverview As CheckBox
+    Friend WithEvents saveConfiguration As CheckBox
 End Class

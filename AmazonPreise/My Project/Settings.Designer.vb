@@ -53,6 +53,15 @@ Namespace My
                 Return defaultInstance
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("19")>  _
+        Public ReadOnly Property Tax() As Double
+            Get
+                Return CType(Me("Tax"),Double)
+            End Get
+        End Property
     End Class
 End Namespace
 

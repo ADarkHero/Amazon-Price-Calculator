@@ -1,29 +1,95 @@
-﻿Public Class amazonCalculator
+﻿Imports System.IO
+
+Public Class amazonCalculator
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        kekInput.Text = "1"
-        shippingInput.Text = "4,9"
-        shippingInput.Text = "4,9"
-        shippingInput.Text = "4,9"
-        shippingInput.Text = "4,9"
-        feeInput.Text = "12"
-        taxInput.Text = "19"
-        multiplyInput.Text = "1"
-        addInput.Text = "0"
-        profitMultiplyInput.Text = "8"
-        profitAddInput.Text = "0"
+
+        ' Read configuration or create it, if it doesn't exist yet
+
+        Dim curFile As String = "settings.txt"
+        If (File.Exists(curFile)) Then
+            readConfiguration()
+        Else
+            kekInput.Text = "1"
+            shippingInput.Text = "4,9"
+            feeInput.Text = "12"
+            taxInput.Text = "19"
+            multiplyInput.Text = "1"
+            addInput.Text = "0"
+            profitMultiplyInput.Text = "8"
+            profitAddInput.Text = "0"
+
+            writeConfiguration()
+        End If
+
+        amazonFeeOverviewCheck()
+        alwaysOnTopCheck()
 
         Me.AcceptButton = calculateAmazon
         calculateAmazon.DialogResult = System.Windows.Forms.DialogResult.OK
+
     End Sub
 
     ' Always on top function
     Private Sub alwaysOnTop_CheckedChanged(sender As Object, e As EventArgs) Handles alwaysOnTop.CheckedChanged
+        alwaysOnTopCheck()
+    End Sub
+
+    Private Function alwaysOnTopCheck()
         If (alwaysOnTop.Checked) Then
             Me.TopMost = True
         Else
             Me.TopMost = False
         End If
+    End Function
+
+
+
+    ' Display amazon fees
+    Private Sub amazonFeeOverview_CheckedChanged(sender As Object, e As EventArgs) Handles amazonFeeOverview.CheckedChanged
+        amazonFeeOverviewCheck()
     End Sub
+
+    Private Function amazonFeeOverviewCheck()
+        If (amazonFeeOverview.Checked) Then
+            Me.Size = New Size(625, 530)
+        Else
+            Me.Size = New Size(300, 530)
+        End If
+    End Function
+
+
+
+
+    ' Saves configurations to txt
+    Private Sub saveConfiguration_CheckedChanged(sender As Object, e As EventArgs) Handles saveConfiguration.CheckedChanged
+        If saveConfiguration.Checked Then
+            writeConfiguration()
+            saveConfiguration.Text = "Configuration saved (" + DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss") + ")"
+            saveConfiguration.Checked = False
+        End If
+    End Sub
+
+    Private Function writeConfiguration()
+        File.WriteAllText("settings.txt", String.Join("|", New String() {kekInput.Text, shippingInput.Text, feeInput.Text, taxInput.Text,
+                                                      multiplyInput.Text, addInput.Text, profitMultiplyInput.Text, profitAddInput.Text,
+                                                      amazonFeeOverview.Checked.ToString, alwaysOnTop.Checked.ToString}))
+    End Function
+
+    Private Function readConfiguration()
+        Dim values() As String = File.ReadAllText("settings.txt").Split("|"c)
+        kekInput.Text = values(0)
+        shippingInput.Text = values(1)
+        feeInput.Text = values(2)
+        taxInput.Text = values(3)
+        multiplyInput.Text = values(4)
+        addInput.Text = values(5)
+        profitMultiplyInput.Text = values(6)
+        profitAddInput.Text = values(7)
+        amazonFeeOverview.Checked = Convert.ToBoolean(values(8))
+        alwaysOnTop.Checked = Convert.ToBoolean(values(9))
+    End Function
+
+
 
     ' Starts the calculations and writes them into the text boxes
     Private Sub calculateAmazon_Click(sender As Object, e As EventArgs) Handles calculateAmazon.Click
@@ -113,4 +179,5 @@ For example:
         MessageBox.Show("Sell your product at this price, if the competition is not to big.", "Sell with profit",
                    MessageBoxButtons.OK)
     End Sub
+
 End Class
