@@ -68,5 +68,49 @@
         Return Math.Round(i, 2).ToString("0.00")
     End Function
 
+    Private Sub btnNetPrice_Click(sender As Object, e As EventArgs) Handles btnNetPrice.Click
+        MessageBox.Show("What is your net price?
+You can modify your base price, if you put a value into the multiplication / addition boxes. 
 
+For example: 
+    This is useful if you have your price for one unit, but you sell it in a pack of 12 units. You can just put a 12 in the multiplication field and don't have to do additional math.", "Net price",
+           MessageBoxButtons.OK)
+    End Sub
+
+    Private Sub btnShipping_Click(sender As Object, e As EventArgs) Handles btnShipping.Click
+        MessageBox.Show("How much do you charge for shipping?", "Shipping",
+           MessageBoxButtons.OK)
+    End Sub
+
+    Private Sub btnAmazonFee_Click(sender As Object, e As EventArgs) Handles btnAmazonFee.Click
+        MessageBox.Show("How big are the fees (in percent), Amazon charges?", "Fee",
+           MessageBoxButtons.OK)
+    End Sub
+
+    Private Sub btnTax_Click(sender As Object, e As EventArgs) Handles btnTax.Click
+        MessageBox.Show("How much tax (in percent) is charged for the product?", "Tax",
+           MessageBoxButtons.OK)
+    End Sub
+
+    Private Sub btnProfit_Click(sender As Object, e As EventArgs) Handles btnProfit.Click
+        MessageBox.Show("How much profit do you want to make, based on your netto price? The multiplication is calculated before the addition.
+
+For example: 
+    Netto price -> 10€ | Profit* -> 8%
+    You would make 80 cents when the item is sold.
+
+    Netto price -> 10€ | Profit* -> 8% | Profit+ -> 0,40
+    You would make €1,20 when the item is sold.", "Profit",
+           MessageBoxButtons.OK)
+    End Sub
+
+    Private Sub btnMinimal_Click(sender As Object, e As EventArgs) Handles btnMinimal.Click
+        MessageBox.Show("Don't sell your product under this price, you will lose money.", "Minimal price",
+           MessageBoxButtons.OK)
+    End Sub
+
+    Private Sub btnWithProfit_Click(sender As Object, e As EventArgs) Handles btnWithProfit.Click
+        MessageBox.Show("Sell your product at this price, if the competition is not to big.", "Sell with profit",
+                   MessageBoxButtons.OK)
+    End Sub
 End Class
