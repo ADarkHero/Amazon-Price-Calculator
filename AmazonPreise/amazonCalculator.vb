@@ -34,7 +34,7 @@
     End Sub
 
     ' Does the calculations
-    Private Function calculatePrice(profit As Boolean) As Double
+    Private Function calculatePrice(profit As Boolean) As String
         ' Read minimal netto price
         Dim kek As Double = Convert.ToDouble(kekInput.Text)
         Dim multiply As Double = Convert.ToDouble(multiplyInput.Text)
@@ -65,7 +65,7 @@
             iRest = i - ifee - kekGross
         Next
 
-        Return Math.Round(i, 2)
+        Return Math.Round(i, 2).ToString("0.00")
     End Function
 
 
